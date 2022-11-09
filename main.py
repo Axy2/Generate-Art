@@ -8,6 +8,7 @@ from aleph_client.chains.ethereum import ETHAccount
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+#helper functions
 def random_color():
     #hue, saturation, value
     h = random.random()
@@ -16,8 +17,8 @@ def random_color():
     float_rgb = colorsys.hsv_to_rgb(h,s,v)
     rgb = [int(255*color) for color in float_rgb]
     return tuple(rgb)
-#     return (random.randint(0,255),random.randint(0,255),random.randint(0,255))
 
+#helper functions
 def interpolate(start_color, end_color ,factor: float):
     recip = 1 - factor
     return (
