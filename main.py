@@ -6,6 +6,7 @@ import argparse
 from aleph_client.asynchronous import get_posts, create_store
 from aleph_client.chains.ethereum import ETHAccount
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
