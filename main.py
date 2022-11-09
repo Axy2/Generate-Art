@@ -6,7 +6,8 @@ import argparse
 from aleph_client.asynchronous import get_posts, create_store
 from aleph_client.chains.ethereum import ETHAccount
 from fastapi import FastAPI
-from pydantic import BaseModel
+
+
 
 #helper functions
 def random_color():
@@ -29,6 +30,16 @@ def interpolate(start_color, end_color ,factor: float):
 
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def root():
